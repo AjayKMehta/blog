@@ -4,24 +4,35 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "monthly"
+    cooldown:
+      default-days: 5
+    groups:
+      actions-dependencies:
+        update-types:
+          - "minor"
+          - "patch"
     labels:
-      - ":arrow_up: dependencies"
+      - "⬆️ Dependencies"
     target-branch: "dev"
 
   # Maintain dependencies for npm
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
+    cooldown:
+      default-days: 5
     labels:
-      - ":arrow_up: dependencies"
+      - "⬆️ Dependencies"
     target-branch: "dev"
 
   - package-ecosystem: "gitsubmodule"
     directory: "/"
     schedule:
       interval: "weekly"
+    cooldown:
+      default-days: 5
     labels:
-      - ":arrow_up: dependencies"
+      - "⬆️ Dependencies"
     target-branch: "dev"
