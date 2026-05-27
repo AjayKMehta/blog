@@ -4,14 +4,15 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "monthly"
+      interval: "cron"
+      cronjob: "0 9 5 * *"
     cooldown:
       default-days: 5
     groups:
       actions-dependencies:
         update-types:
-          - "minor"
-          - "patch"
+          - "version-update:semver-minor"
+          - "version-update:semver-patch"
     labels:
       - "⬆️ Dependencies"
     target-branch: "dev"
