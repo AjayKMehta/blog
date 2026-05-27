@@ -16,7 +16,7 @@ jobs:
         timeout-minutes: 5
         steps:
             - name: merge pull request
-              uses: sudo-bot/action-pull-request-merge@v1.2.0
+              uses: sudo-bot/action-pull-request-merge@5b58b5cb1e46bda23160c3a6d56beeec7036c7e2 # v1.2.0
               with:
                   github-token: ${{ secrets.GITHUB_TOKEN }}
                   number: ${{ github.event.pull_request.number }}
